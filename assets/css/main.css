@@ -176,6 +176,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		width: 90%;
+		/* width: auto; */
 		color: #ffffff;
 		font-weight: 600;
 		line-height: 1.5;
@@ -183,27 +184,21 @@ input, select, textarea {
 		text-transform: uppercase;
 		letter-spacing: 0.2rem;
 	}
-
+	h1.auto, h2.auto, h3.auto, h4.auto, h5.auto, h6.auto {
+		width: auto;
+		color: #ffffff;
+		font-weight: 600;
+		line-height: 1.5;
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+	}
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
 		}		
 			
-	/*	h1.minor, h2.minor, h3.minor, h4.minor, h5.minor, h6.minor {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: center;
-			align-items: baseline;
-			align-content: stretch;
-			border-bottom: solid 1px #ffffff;
-			width: -moz-max-content;
-			width: -webkit-max-content;
-			width: -ms-max-content;
-			width: 90%;
-			padding-bottom: 0.5rem;
-			margin: 0 0 2rem 0;
-		}*/
+	
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
 			border-bottom: solid 1px #ffffff;
 			width: -moz-max-content;
@@ -1174,7 +1169,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/Fondo.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1295,7 +1290,7 @@ input, select, textarea {
 				left: calc(50% - 1px);
 				width: 1px;
 				height: calc(3.5rem + 1px);
-				background: #ffffff;
+				/* background: #ffffff; */
 			}
 
 		#header > :first-child {
@@ -1307,10 +1302,11 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
+			/* width: 5.5rem; */
+			width: 10rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
-			border: solid 1px #ffffff;
+			/* border: solid 1px #ffffff; */
 			border-radius: 100%;
 		}
 
@@ -1457,7 +1453,7 @@ input, select, textarea {
 				}
 
 			#header .logo {
-				width: 4.75rem;
+				width: 8rem;
 				height: 4.75rem;
 				line-height: 4.75rem;
 			}
@@ -1508,7 +1504,7 @@ input, select, textarea {
 							height: 3rem;
 							line-height: 3rem;
 							min-width: 0;
-							width: 100%;
+							width: auto;
 						}
 
 				#header nav.use-middle:after {
@@ -1562,7 +1558,8 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
+			/* background-color: rgba(27, 31, 34, 0.85); */
+			background-color: rgba(123, 64, 12, 0.61);
 			border-radius: 4px;
 			opacity: 0;
 		}
