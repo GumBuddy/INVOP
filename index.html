@@ -247,7 +247,7 @@
 <!-- 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
  -->							<ul>
 										<li><a href="#TEMA6">Características de la Programacion Lineal</a></li>
-										<li><a href="#TEMA7">El Método Grafíco</a></li>
+										<!-- <li><a href="#TEMA7">El Método Grafíco</a></li> -->
 										<li><a href="simlex.html">Métodos Simplex</a></li>
 										
 									</ul>
@@ -255,261 +255,52 @@
 						<!-- Temas de Subcompetencia 2 -->
 							<article id="TEMA6">
 								<h2 class="major">Caracteristicas de la Programacion Lineal</h2>
- 								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+								<h3 class="major align-center">Introducción a la Programación Lineal</h3>
+								<p>El objetivo de un modelo matemático es reproducir la realidad de la forma más fiel posible a fin de entender cómo se comporta y poder obtener respuestas a determinadas acciones.
+ 									<br>
+									La programación lineal es un tipo de modelo matemático que se desarrolló a partir de la Segunda Guerra Mundial para resolver cierto tipo de problemas de asignación de recursos entre distintas actividades.
+									<br>
+									Después de la guerra las aplicaciones de la programación lineal se extendieron a una amplia variedad de problemas, de manera que hoy se utiliza en campos como la ingeniería, la economía, la gestión, y muchas otras áreas de la ciencia, la técnica y la industria.
+								</p>
+								<p>
+									La programación lineal fue formulada por George B. Dantsig alrededor de 1947, cuando trabajaba como consejero matemático para la Fuerza Aérea de Estados Unidos en el desarrollo de un sistema automático de planificación temporal de despliegue, entrenamiento y abastecimiento logístico.
+									<br>
+									Debido a que la Fuerza Aérea denomina programas a sus diversos planes y proyectos a implementar, en el primer artículo publicado por Dantzig se refiere a este problema como programación en una estructura lineal.
+									<p>
+									El término programación lineal fue acuñado por el economista y matemático T.C. Koopmans en el verano de 1948 cuando colaboraba con el propio Dantzig.
+									</p>
+									En 1949, Dantzig publicó el método del simplex para resolver programas lineales, método que fue ampliamente aceptado por su capacidad de producir soluciones en un tiempo razonable. <br>									
+									La programación lineal estudia la optimización (minimización o maximización) de una función lineal que satisface un conjunto de restricciones lineales de igualdad y/o desigualdad.
+								</p>
+								<h3 class="major align-center">Formulación de un modelo de programación lineal</h3>
+								<p>En el proceso de formulación de un modelo de programación lineal hay que dar los siguientes pasos:</p>								
+								<ol>
+									<li>Determinación de las variables de decisión. Representan los elementos del sistema a modelar que son controlables por el decisor. En los modelos lineales continuos estas variables toman como valores números reales y se representan por letras con subíndices x1 , x2 ,...como se acostumbra a hacer con las variables matemáticas, o literales alusivos a su significado: peso, valor, etc. En el primer caso también se utiliza la representación como vector de un conjunto indexado de variable:</li>
+									<img class="image fit" src="images/Formula1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+									<li>Determinación de las restricciones. Representan las limitaciones prácticas de determinados recursos o imposiciones físicas de la realidad. Se expresan como ecuaciones e inecuaciones lineales de las variables de decisión. <br> Matemáticamente adoptan una de las siguientes formas:</li>
+									<img class="image fit" src="images/Formula2.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+									<li>Formulación de la función objetivo. Se trata de la función que mide la calidad de la solución y que hay que optimizar (maximizar un beneficio o minimizar un coste). También es una función lineal de todas o parte de las variables de decisión.</li>
+									<img class="image fit" src="images/Formula3.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								</ol>
+								<h3 class="major align-center">Representación gráfica de los problemas de programación lineal</h3>
+								<p>Un problema de programación lineal con 2 variables de decisión se puede representar gráficamente en el plano cuyas coordenadas son las propias variables. Para ello se representan las rectas que resultan de convertir las restricciones de desigualdad en ecuaciones, y se determina con el signo de desigualdad el semiplano que define cada restricción (marcado en el dibujo con una flecha verde perpendicular a la recta). La región factible queda determinada por la intersección de los semiplanos que definen las restricciones.</p>
+								<h3 class="major align-center">Clasificación de los problemas de programación lineal según el tipo de solución</h3>
+								<p>Atendiendo al tipo de solución podemos clasificar los problemas de programación en las siguientes categorías:</p>
+								<img class="image fit" src="images/Esquema.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<p>Veamos con la ayuda de la representación gráfica de la región factible un ejemplo de cada tipo.</p>
+								<img class="image fit" src="images/Graficas.jpg" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<blockquote>Un problema factible que tenga la recta de iso‐beneficio paralela a la recta de una restricción que contenga un punto extremo óptimo, tendrá todo un segmento de puntos óptimos.</blockquote>
+								<h3 class="major align-center">Clasificación de los problemas de programación lineal según el tipo de solución (continuación)</h3>
+								<img class="image align-center" width="100%" src="images/Esquemas2.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<blockquote>Los lenguajes de modelado como OPL suelen informar del carácter factible, no factible (infeasible)o no acotado (unbounded) de la solución.</blockquote>
+								<a href="#Subcom2" class="button primary left">Regresar</a>
+
 							</article>
-							<article id="TEMA7">
+							<!-- <article id="TEMA7">
 								<h2 class="major">El Método Grafíco</h2>
  								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
 								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
-							<!-- <article id="TEMA8">
-								<h2 class="major">Métodos Simplex</h2>
- 								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
 							</article> -->
-						  
-							<!--<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-						-->
 					</div>
 
 				<!-- Footer -->

@@ -1,11 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -97,10 +93,6 @@ input, select, textarea {
 		box-sizing: border-box;
 	}
 
-	/**, *:before, *:after {
-		box-sizing: inherit;
-	}*/
-
 	body {
 		background: #1b1f22;
 	}
@@ -183,7 +175,6 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		width: 90%;
-		/* width: auto; */
 		color: #ffffff;
 		font-weight: 600;
 		line-height: 1.5;
@@ -1123,6 +1114,15 @@ input, select, textarea {
 			color: #1b1f22 !important;
 			font-weight: 600;
 		}
+		button.primary,
+		.button.primary.left-40 {
+			text-align: center;
+			left: 40%;			
+			position: inherit;
+			background-color: #ffffff;
+			color: #1b1f22 !important;
+			font-weight: 600;
+		}
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
 		input[type="reset"]:disabled,
@@ -1375,7 +1375,7 @@ input, select, textarea {
 				font-size: 0.8rem;
 				line-height: 2;
 			}
-
+			
 		#header nav ul {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -1399,7 +1399,7 @@ input, select, textarea {
 
 				#header nav ul li a {
 					display: block;
-					min-width: 7.5rem;
+					min-width: 14rem;
 					height: 2.75rem;
 					line-height: 2.75rem;
 					padding: 0 1.25rem 0 1.45rem;
@@ -1542,6 +1542,7 @@ input, select, textarea {
 
 		}
 
+		
 /* Main */
 
 	#main {

@@ -13,7 +13,7 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
+					<header id="header" >
 						<div class="logo">
 						   </div>
 						<div class="content">
@@ -23,41 +23,202 @@
 						</div>
 						<nav >
 							<ul>
-								<li><a href="#TEMA1">tema</a></li>
-								<li><a href="#TEMA2">tema</a></li>
-								<li><a href="#TEMA3">tema</a></li>
-								<li><a href="#TEMA4">tema</a></li>
+								<li><a href="#TEMA1">Método Simplex</a></li>
+								<li><a href="#TEMA2">Método de la M</a></li>
+								<li><a href="#TEMA3">Método de dos fases</a></li>
+								<li><a href="#TEMA4">Método Símplex Revisado</a></li>
  							</ul>
 						</nav>
-						<a href="index.html" class="button primary left">Regresar</a>
+						<a href="index.html" class="button primary left-40">Regresar</a>
+
 					</header>
 
 				<!-- Main -->
 					<div id="main">
 						<!-- Temas de Metodos Simplex -->
 							<article id="TEMA1">
-								<h2 class="major">Titulo Principal</h2>
-								<h3 class="major align-center">Titulo con Divisor</h3>
-								<h3	class="align-center">Titulo Simple</h3>
-								<p>Parrafo</p>
+								<h2 class="major">Metodo Simplex</h2>
+								<h3 class="major align-center">Método Simplex Tabular</h3>
+
+								<p>El método Simplex es un procedimiento general para encontrar la solución óptima a problemas de Programación Lineal.
+									Este método logra la solución óptima en un número finito de pasos, la demostración de esto es lo que se pretende realizar.</p>
+								<br>
+								<p>El Método Simplex, esta diseñado para ser aplicado únicamente hasta que el problema se encuentre en la forma Estándar.</p>
+								<p>Un problema lineal se dice que esta en la forma estándar si: </p>
+									<ol>
+										<li>Todas las restricciones son igualdades </li>
+										<li>Todas las variables son no-negativas</li>
+										<li>Las limitaciones ( lado derecho de la restricción) son positivas</li>
+									</ol>
+
+									<h3 class="align-center">Igualdades y desigualdades en las restricciones</h3>
+									<p>Una desigualdad puede fácilmente ser transformada a una igualdad (ecuación ) a través del uso de las variables de holgura en caso de:  </p>
+
+									<ol>
+										<li>La desigualdad menor o igual (≤ ), la deficiencia de unidades para el lado izquierdo de la restricción iguale a lado derecho de la misma. Por lo que se agrega una variable de holgura con signo positivo en el lado izquierdo de la restricción. </li>
+										<li>La desigualdad menor o igual (≥ ),el exceso de unidades que tiene el lado izquierdo de la restricción con respecto al lado derecho de la misma. Por lo que se agrega una variable de holgura con signo negativo en el lado izquierdo de la restricción. </li>
+								  </ol>
+									<br>
+									<img class="image fit" src="images/metodo_simplex_ejemplo1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+									<br>
+									<h3 class="major align-center">Procedimiento del Método Simplex </h3>
+									<h3 class="align-center">Paso 1: Escribir la tabla inicial simplex </h3>
+
+									<p>La forma tabular del método simplex registra la información esencial en la llamada Tabla Símplex, a saber:</p>
+
+									<ol>
+										<li>Los coeficientes de las variables </li>
+										<li>Las constantes del lado derecho de las ecuaciones</li>
+										<li>La variable básica que aparecen en cada ecuación</li>
+									</ol>
+
+									<h3 class="align-center">Paso 2: Encontrar la variable de decisión que entra en la base:</h3>
+
+									<ol>
+										<li>En la línea de z, escogemos la columna con el coeficiente negativo mayor (en valor absoluto) </li>
+										<li>Si no existe coeficiente negativo, significa que se ha alcanzado la solución óptima. </li>
+							  	</ol>
+
+									<h3 class="align-center">Paso 3: Encontrar la variable de holgura que tiene que salir:</h3>
+
+									<p>Dividiendo la columna pivote, con la columna del lado derecho (o solución), siempre que sean positivos, el menor de los cocientes indicará cual es la fila que sale. </p>
+
+									<h3 class="align-center">Paso 4: Ubicar el elemento pivote:</h3>
+
+									<p>La intersección de la columna que entra y la fila que sale se denomina elemento pivote </p>
+
+
+									<h3 class="align-center">Paso 5: Encontrar los coeficientes de la nueva tabla </h3>
+
+									<ol>
+										<li>Los nuevos coeficientes de x se obtienen dividiendo todos los coeficientes de la fila que sale por el elemento pivote, para convertirlo en 1. </li>
+										<li>Mediante la reducción Gaussiana se hacen ceros los restantes términos de su columna, con lo que obtenemos los nuevos coeficientes de las otras filas incluyendo la función objetivo z.</li>
+									</ol>
+									<br>
+									<p>NOTA: Si en lugar de maximizar se trata de un problema de minimizar se sigue el mismo proceso, pero cambiando el sentido del criterio: para entrar en la base se elige la variable cuyo valor, en la fila de la función objetivo, sea el mayor de los positivos y se finalizan las iteraciones cuando todos los coeficientes de la fila de la función objetivo son negativos </p>
+									<br>
+									<h3 class="major align-center">Casos especiales</h3>
+									<h3 class="align-center"> Conflictos entre variables básicas entrantes </h3>
+									<p>Variables con el mismo coste reducido en la ecuación z, se puede elegir cualquiera</p>
+									<br>
+									<h3 class="align-center"> Conflictos entre variables básicas entrantes </h3>
+									<h3 class="align-center">DEGENERACIÓN</h3>
+									<p>Variables con el mismo coste reducido en la ecuación z, se puede elegir cualquiera</p>
+									<ol>
+										<li>Variables básicas que se hacen simultáneamente 0 al incrementar la variable básica entrante. Las variables básicas no salientes toman valor 0 (degeneradas) </li>
+										<li>Si estas variables básicas degeneradas siguen con valor 0 en otra iteración la variable básica entrante no puede incrementar su valor y tampoco la función objetivo z </li>
+										<li> Si la función objetivo no se incrementa se puede producir un ciclo ( moverse por una secuencia de bases que definen el mismo punto extremo). Resoluble mediante procedimientos especiales</li>
+									</ol>
+									<br>
+									<h3 class="align-center"> Inexistencia de la variable básica saliente </h3>
+									<h3 class="align-center">SOLUCIÓN NO ACOTADA</h3>
+									<p>Variable básica entrante puede incrementarse indefinidamente sin anular ninguna variable básica actual. Los coeficientes de la columna pivote son negativos o cero.</p>
+									<br>
+									<p>No siempre es fácil obtener una solución básica factible inicial, en las variables originales del modelo. Para conseguir esto existen varios procedimientos como son:</p>
+									<ol>
+										<li>Método de la M.</li>
+										<li>Método Simplex de dos fases.</li>
+									</ol>
 							</article>
 							<article id="TEMA2">
-								<h2 class="major">Titulo Principal</h2>
-								<h3 class="major align-center">Titulo con Divisor</h3>
-								<h3	class="align-center">Titulo Simple</h3>
-								<p>Parrafo</p>
+								<h2 class="major">Método de la M</h2>
+								<p>El único problema serio que introducen las otras formas de restricciones funcionales con lados derechos no positivos, es identificar una solución inicial básica factible.</p>
+								<h3	class="align-center">Ejemplo: </h3>
+								<br>
+								<img class="image fit" src="images/metodo_M_ejemplo1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<h3 class="major align-center">técnica de variables artificiales:</h3>
+								<ol>
+									<li>Introducir una variable ficticia (llamada variable artificial) en cada restricción que lo requiera. </li>
+									<li>Esta nueva variable se introduce sólo con el fin de que sea la variable básica inicial para esa ecuación.</li>
+									<li>Las restricciones usuales de no negatividad también se aplican sobre estas variables y la función objetivo se modifica para  que imponga una penalización exorbitante en  el caso de que adquieran valores mayores que cero. </li>
+								</ol>
+								<br>
+								<h3	class="align-center">Problema Artificial</h3>
+								<br>
+								<img class="image fit" src="images/metodo_M_ejemplo2.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<p>Este sistema no se encuentra apropiado para la eliminación de Gauss por que el coeficiente de x5 es diferente de 0, que debe eliminarse con operaciones algebraicas</p>
+								<br>
+								<h3	class="align-center">Conversión de la ecuación a la forma apropiada.</h3>
+								<br>
+								<img class="image fit" src="images/metodo_M_ejemplo3.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<h3	class="align-center">Otro ejemplo:</h3>
+								<br>
+								<img class="image fit" src="images/metodo_M_ejemplo4.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<p>La restricción es del tipo >=, por lo que para cambiarla a su forma de igualdad tendríamos que restar una variable de superávit (o de excedente). No obstante en este caso debe agregarse otra variable. Esta variable extra, llamada variable artificial se aumenta como sigue:</p>
+								<p align="center">0.6x1 + 0.4x2 - x5 + x6 = 6 </p>
+								<p>La función objetivo queda de la siguiente manera:</p>
+								<p align="center">Z=0.4x1+0.5x2+Mx4+Mx6</p>
+								<br>
+								<h3	class="align-center">Problema Artificial</h3>
+								<br>
+								<img class="image fit" src="images/metodo_M_ejemplo5.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<p>Este sistema no se encuentra apropiado para la eliminación de Gauss ya que deben eliminarse las variables básicas x4 y x6, deben eliminarse con operaciones algebraicas</p>
+								<h3	class="align-center">Conversión de la ecuación a la forma apropiada.</h3>
+								<br>
+								<img class="image fit" src="images/metodo_M_ejemplo6.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
 							</article>
 							<article id="TEMA3">
-								<h2 class="major">Titulo Principal</h2>
-								<h3 class="major align-center">Titulo con Divisor</h3>
-								<h3	class="align-center">Titulo Simple</h3>
-								<p>Parrafo</p>
+								<h2 class="major">Método de dos fases</h2>
+								<p>Otra manera de resolver las otras formas de restricciones funcionales con lados derechos no positivos, es el método de dos fases.</p>
+								<br>
+								<img class="image fit" src="images/metodo_2fases_ejemplo1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<p>Como los coeficientes son depreciables comparados con M, el método de dos fases puede eliminar la M usando 2 funciones objetivo que definen a Z.</p>
+								<h3	class="major align-center">Fase 1: </h3>
+								<p>Función objetivo: Z=x4+x6 (hasta que x4=0, x6=0) </p>
+								<p>Se busca la solución Básica Factible para usarla como solución Básica Factible inicial del método símplex de la Fase 2 al problema real (con su función objetivo) </p>
+								<h3	class="major align-center">Fase 2: </h3>
+								<p>Función objetivo: Z=0.4x1+0.5x2 (con x4=0, x6=0) </p>
+								<p>El objetivo de esta fase es encontrar una solución óptima para el problema real con el método simplex.</p>
+								<p> Como las variables artificiales no son parte del problema real, se pueden eliminar y comenzando con la solución Básica Factible de la Fase 1 </p>
+								<br>
+								<h3	class="major align-center">Tabla simplex de la Fase I</h3>
+								<br>
+								<img class="image fit" src="images/metodo_2fases_ejemplo2.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<h3	class="major align-center">Tabla simplex final de la Fase I</h3>
+								<br>
+								<img class="image fit" src="images/metodo_2fases_ejemplo3.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<h3 class="major align-center">Tabla simplex de la Fase 2, después de las operaciones algebraicas pertinentes y eliminación de variables</h3>
+								<br>
+								<img class="image fit" src="images/metodo_2fases_ejemplo4.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<p>Los resultados por Método de la M ó por el método de dos fases es el mismo.</p>
+
 							</article>
 							<article id="TEMA4">
-								<h2 class="major">Titulo Principal</h2>
-								<h3 class="major align-center">Titulo con Divisor</h3>
-								<h3	class="align-center">Titulo Simple</h3>
-								<p>Parrafo</p>
+								<h2 class="major">Método Símplex Revisado</h2>
+								<p>El método símplex no es un método eficiente cuando se trata de emplear una computadora, pues calcula y almacena mucho números que no se necesitan para la iteración actual.</p>
+								<p>Las cifras importantes son: </p>
+								<ol>
+									<li>Los coeficientes de las variables no básicas en la ecuación z.</li>
+									<li>Los coeficientes de la variable básica entrante en las otras ecuaciones.</li>
+									<li>El lado derecho de las ecuaciones.</li>
+								</ol>
+								<p>Las ideas anteriores motivaron el desarrollo del método símplex revisado, para que lograra exactamente las mismas cosas que el método símplex original, pero de manera más eficiente para su ejecución en una computadora.</p>
+								<p>Calcula y almacena información que se necesita en el momento y guarda los datos esenciales de manera más compacta con: </p>
+								<ol>
+									<li>Matrices</li>
+									<li>Vectores</li>
+									<li>Escalares</li>
+								</ol>
+								<br>
+								<img class="image fit" src="images/metodo_2fases_ejemplo5.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<br>
+								<p>El Método Símplex Revisado, consiste básicamente en los mismos básicos que el Método Simple, por lo tanto, se trata de una versión simplificada del procedimiento original : </p>
+								<ol>
+									<li>El mismo que en el método simplex original.</li>
+									<li>Se determina la variable básica que entrante: igual que el método símplex original. </li>
+									<li>Se determina la variable básica que sale: igual que el método símplex original, pero se calculan solo los números que se necesitan. </li>
+									<li>Se determina una nueva solución básica factible. </li>
+								</ol>							
 							</article>
 					</div>
 
