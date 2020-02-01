@@ -28,6 +28,7 @@
 							<ul>
 								<li><a href="#Subcom1">SubCompetencia 1</a></li>
 								<li><a href="#Subcom2">SubCompetencia 2</a></li>
+								<li><a href="#Subcom3">SubCompetencia 3</a></li>
  							</ul>
 						</nav>
 					</header>
@@ -244,8 +245,7 @@
 							<article id="Subcom2">
 								<h2 class="major">Programación Lineal</h2>
 								<i>Selecciona el tema de tu interes</i>
-<!-- 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
- -->							<ul>
+ 									<ul>
 										<li><a href="#TEMA6">Características de la Programacion Lineal</a></li>
 										<!-- <li><a href="#TEMA7">El Método Grafíco</a></li> -->
 										<li><a href="simlex.html">Métodos Simplex</a></li>
@@ -296,11 +296,231 @@
 								<a href="#Subcom2" class="button primary left">Regresar</a>
 
 							</article>
-							<!-- <article id="TEMA7">
-								<h2 class="major">El Método Grafíco</h2>
- 								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article> -->
+							<article id="Subcom3">
+								<h2 class="major">Variantes de la Programación Lineal</h2>
+								<i> <p class="align-center">Selecciona el tema de tu interés</p> </i>
+									<ul>
+										<li type="none"><a href="#TEMA7">Modelo de Transporte</a></li>
+										<li type="none"><a href="#TEMA8">Modelo de Asignación</a></li>
+										<li type="none"><a href="https://podcasts.apple.com/mx/podcast/modelos-de-redes/id966583239?i=1000396559331">Modelo de Redes</a></li>
+										<li type="none"><a href="#TEMA9">Modelos de Secuenciación</a></li>
+									</ul>
+							</article>
+							<article id="TEMA7">
+								<h2 class="major">Modelo de Transporte</h2>
+								<p>El modelo de transporte es una clase especial de programación lineal que tiene que ver con transportar un artículo desde sus fuentes (fabricas) hasta sus destinos (bodegas).</p>
+								<p>En el modelo se supone que el costo de transporte es proporcional a la cantidad de unidades transportadas en una determinada ruta.</p>
+								<p>Aunque el modelo se puede resolver como una programación lineal normal, su estructura especial permite desarrollar un algoritmo especial.</p>
+								<p>Hay m fuentes y n destinos, cada fuente y cada destino representados por un nodo. Los arcos representan las rutas que enlazan las fuentes y los destinos. El arco (i, j) que une a la fuente i con el destino j conduce 2 clases de información: el costo de transporte cij por unidad y la cantidad transportada xij.</p>
+								<p>El objetivo del modelo es determinar las incógnitas xij que minimicen el costo total de transporte, y que al mismo tiempo satisfagan las restricciones de oferta y demanda.</p>
+								<img class="image fit" src="images/transporte1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<p>La estructura especial del modelo de transporte permite asegurar que haya una solución básica artificial de inicio, obtenida con uno de los tres métodos siguientes:</p>
+								<ul>
+									<li>Método de la esquina noroeste (superior, izquierda)</li>									
+									<li>Método del costo mínimo</li>
+									<li>Método de aproximación de Vogel</li>
+								</ul>
+								<h3 class="major align-center">Método de la esquina noroeste</h3>
+								<ol>
+									<li>Asignar todo lo más que se pueda a la celda seleccionada y ajustar las cantidades asociadas de oferta y demanda restando la cantidad asignada.</li>
+									<li>Salir del renglón o la columna cuando se alcance oferta o demanda cero, y tacharlo, para indicar que no se pueden hacer más asignaciones a ese renglón o columna. Si un renglón y una columna dan cero al mismo tiempo tachar solo uno (el renglón o la columna) y dejar una oferta (demanda) cero en el renglón (columna) que no se tachó.</li>
+									<li>Si queda exactamente un renglón o columna sin tachar, detenerse. En caso contrario avanzar a la celda de la derecha si se acaba de tachar una columna, o a la de abajo si se tachó un renglón. Seguir el paso 1.</li>
+								</ol>
+								<h3 class="major align-center">Método del costo mínimo</h3>
+								<p>Este método determina una mejor solución de inicio, porque se concentra  en las rutas menos costosas</p>
+									<h3 class="align-center">Ejemplo</h3>
+									<p>La compañía SunRay Transport transporta grano desde tres silos hasta cuatro molinos. La oferta (en caminadas) se resume en el modelo de transporte de la tabla siguiente junto con los costos unitarios de transporte por camionada en las distintas rutas. Los costos unitarios de transporte, Cij (10, 2, 20,11….) están en cientos de $.</p>								
+									<img class="image fit" src="images/costos1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+									<ol>
+										<li>La celda (1,2) tiene el costo unitario mínimo de toda la tabla (=$2). Lo más que se puede transportar por (1,2) es x12 =15 camionadas, y en este caso se satisfacen al mismo tiempo el renglón 1 y la columna 2. Se tacha en forma arbitraria la columna 2 y se ajusta la oferta del renglón 1 a 0.</li>
+										<li>La celda (3,1) tiene el mínimo costo sin tachar (=$4). Se asigna x31=5, se tacha la columna 1 porque quedó satisfecha y se ajusta la demanda del renglón 3 a 10-5=5 camionadas.</li>
+										<li>Al continuar de este modo, se asignan en forma sucesiva 15 camionadas a la celda (2,3), 0 camionadas a la celda (1,5), 5 a la celda (3,4) y 10 a la (2,4).</li>
+									</ol>
+								<h3 class="major align-center">Método de aproximación de Vogel</h3>
+								<ol>
+									<li>Determinar para cada renglón (columna) una medida de penalización restando el elemento de costo unitario mínimo en el renglón (columna) del elemento con costo unitario siguiente al mínimo del mismo renglón (columna).</li>
+									<li>Identificar el renglón o columna con la mayor penalización. Romper los empates en forma arbitraria. Asignar todo lo posible a la variable que tenga el mínimo costo unitario del renglón o columna seleccionado. Ajustar la oferta y la demanda y tachar el renglón o la columna ya satisfechos. Si se satisfacen un renglón y una columna en forma simultánea, sólo se tacha uno de los dos y al que queda se le asigna la oferta o demanda cero.</li>
+									<ul>
+										<li type="a">Si queda sin tachar exactamente un renglón o columna con cero oferta o demanda. Detenerse.</li>
+										<li type="a">Si queda sin tachar un renglón (columna) con oferta (demanda) positiva, determinar las variables básicas en el renglón (columna) con el método e costo mínimo. Detenerse.</li>
+										<li type="a">Si todos los renglones y columnas que no se tacharon  tienen un cero oferta y demanda (Restante), determinar las variables básicas cero por el método del costo mínimo. Detenerse.</li>
+										<li type="a">En cualquier otro paso, seguir el paso 1.</li>
+									</ul>
+								</ol>
+								<a href="#Subcom3" class="button primary left">Regresar</a>							
+							</article>
+							<article id="TEMA8">
+								<h2 class="major">Modelo de Asignación</h2>
+								<h3 class="major align-center">Método Húngaro</h3>
+								<ol>
+									<li>En la matriz de costo, identificar el mínimo de cada renglón y restarlo de todos los elementos del renglón</li>
+									<li>En la matriz que resulte del paso 1, identificar el mínimo de cada columna, y restarlo de todos los elementos de la columna.</li>
+									<li>Identificar la solución óptima como la asignación factible asociada con los elementos cero de la matriz obtenida en el paso 2.</li></br>
+									<p> <strong>CASO ESPECIAL, CUANDO NO HAY ASIGNACIÓN FACTIBLE</strong></p>
+									<p><i>Durante el paso 2</i></p>
+									<ol>
+										<li>Trazar la cantidad mínima de líneas horizontales y verticales en la última matriz reducida que cubran todos los elementos cero.</li>
+										<li>Seleccionar el elemento mínimo no cubierto, resaltarlo de todo elemento no cubierto y a continuación sumarlo a todo elemento en la intersección de dos líneas</li>
+										<li>Si no puede encontrar una asignación factible entre los elementos cero que resulten, repetir el paso 2ª. En caso contrario, seguir el paso 3 para determinar la asignación óptima</li>
+									</ol>
+								</ol>
+								<a href="#Subcom3" class="button primary left">Regresar</a>
+							</article>						
+							<article id="TEMA9">
+								<h2 class="major">Modelo de Secuenciación</h2>
+								<h3 class="major align-center"> CMP Y PERT</h3>
+								<p>Los métodos CMP( método de la ruta crítica o del camino crítico) y PERT( técnica de evaluación y revisión del programa) se basan en redes, y tienen por objeto auxiliar en la planeación, programación y control de proyectos. Se define un proyecto como conjunto de actividades interrelacionadas, en la que cada actividad consume tiempo y recursos.</p>
+								<blockquote>El objetivo del CMP y del PERT es contar con un método analítico para programar las actividades.</blockquote>
+								<h3 class="align-center">Fases de planeación de un proyecto con CMP o PERT</h3>
+								<img class="image fit" src="images/CMPyPert.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<blockquote>
+									Resumen de los pasos de éstas técnicas: 
+									<ul>
+										<li>Definición de las actividades del proyecto, sus relaciones de precededencia y sus necesidades de tiempo.</li>
+										<li>El proyecto se traduce en una red que muestre las relaciones de precedencia entre las actividades.</li>
+										<li>Realizar cálculos específicos de redes, que forman la base del desarrollo del programa del proyecto en funcion del tiempo.</li>
+									</ul>
+								</blockquote>
+								<p>Durante la ejecución del proyecto, podría no cumplirse el programa que estaba planeado, causando que algunas de las actividades se adelanten o se atrasen. En este caso será necesario actualizar el programa para que refleje la realidad.</p>
+								<p>Ésta es la razón de incluir un bucle, lazo o ciclo de retroalimentación entre la fase de programa y la fase de red. </p>
+								<h3 class="major align-center"> Método CMP</h3>
+								<p>El método CMP  supone duraciones determinanticas de actividad</p>						
+								<h3 class="major align-center">Método PERT</h3>
+								<p>El método PERT supone duraciones probabilísticas.</p>
+								<h3 class="major align-center">Representación en red</h3>
+								<p>Cada actividad del proyecto se representa con un arco que apunta en la dirección de avance del proyecto. Los nodos en la red establecen las relaciones de precedencia entre las diferentes actividades del proyecto. </br></p>
+								<p>Para configurar la red se disponen las siguientes reglas:</p>
+								<ol>
+									<li>Cada actividad se representa con un arco, y uno solo.</li>
+									<li>Cada actividad se debe identificar con dos nodos distintos.</li>
+									<li>Para mantener las relaciones de precedencia correctas, se deben contestar las siguientes preguntas cuando se agrega a la red cada actividad:</li>
+									<ul>
+										<li type="a">¿Qué actividades deben anteceder inmediatamente a la actividad actual?</li>
+										<li type="a">¿Qué actividades deben seguir inmediatamente a la actividad actual?</li>
+										<li type="a">¿Qué actividades deben efectuarse en forma concurrente o simultanea con la actividad actual?</li>
+									</ul>									
+								</ol>
+								<h3 class="align-center">Uso de una actividad ficticia para tener representación única de las actividades concurrentes A y B</h3>
+								<img class="image fit" src="images/Grafos.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<ol>
+									<li>La actividad C comienza de inmediato después de haber terminado A y B.</li>
+									<li>La actividad E se inicia después de que sólo terminó la actividad B.</li>
+								</ol>
+								<h3 class="align-center">Uso de una actividad ficticia para asegurar una relación de precedencia correcta.</h3>
+								<img class="image fit" src="images/Grafos2.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<ul>
+									<li type="a">Representación incorrecta de esta relación de procedencia, porque pide que A y B terminen antes de poder iniciar.</li>
+									<li type="a">Representación corregida.</li>
+								</ul>
+								<h3 class="major align-center">Cálculos para la ruta critica (CPM)</h3>
+								<p>El resultado final de CPM es la formulación o construcción del programa del proyecto. Para lograr este objetivo se hacen cálculos especiales con los que se obtiene la siguiente información:</p>
+								<ol>
+									<li>Duración total necesaria para terminar el proyecto.</li>
+									<li>Clasificación de las actividades del proyecto en criticas y no criticas.</li>
+								</ol>
+								<dl>
+									<dt>Actividad critica:</dt>
+									<dd>Si no hay margen en la determinación de sus tiempos de inicio y de termino.</dd></br>
+									<dt>Actividad no critica:</dt>
+									<dd>Permite alguna holgura en su programación, de modo que el tiempo de inicio de la actividad se pueda adelantar o retrasar dentro de ciertos limites, sin afectar la fecha de determinación del proyecto.</dd></br>
+									<dt>Evento (nodo):</dt>
+									<dd>Se define como un momento en el tiempo en el que se terminan actividades y  otras se inician.</dd></br>
+								</dl>
+								<dl>
+									<h3>Se define lo siguiente:</h3>
+									<dt>□j</dt>
+									<dd>Tiempo más temprano de ocurrencia del evento j.</dd>
+									<dt>∆j</dt>
+									<dd>Tiempo más tardío de ocurrencia del evento j.</dd>
+									<dt>Dij</dt>
+									<dd>Duración de la actividad (i,j).</dd>
+									<p>Las definiciones de los tiempos más temprano y más tardío del evento j se especifican en relación con las fechas de inicio y terminación de todo el proyecto.</p>
+								</dl>
+								<h3 class="align-center">Pasos para los cálculos de ruta critica</h3>
+								<ol>
+									<li>Paso hacia adelante (tiempos más tempranos de ocurrencia o tiempos más próximos de ocurrencia, □). Los cálculos se inician en el nodo 1 y avanza en forma recursiva hasta el nodo final n.</li>
+									<dl>
+										<dt>Paso inicial</dt>
+										<dd>Poner el □j =0, para indicar que el proyecto se inicia cuando el tiempo es 0.</dd>
+										<dt>Paso general j</dt>
+										<dd>Dado que los nodos p,q, …y v están enlazados directamente con el nodo j por las actividades de entrada (p,j),(q,j),… y (v,j) y que los tiempos más tempranos de ocurrencia de los eventos (nodos) p,q,…y v ya se han calculado, entonces se calcula el tiempo más temprano de ocurrencia del evento j como sigue:</dd>
+										<p>□j = max{□p + Dpj , □q + Dqj, …□v + Dvj }</p>
+										<p>El paso hacia adelante se termina cuando se calcula □n en el nodo n. Por definición, □j representa la ruta (duración) más larga al nodos j.</p>
+									</dl>
+									<li>Paso hacia atrás (tiempos más tardíos de ocurrencia o tiempos más lejanos de ocurrencia, ∆). Los cálculos del paso hacia atrás comienzan en el nodo n y terminan en el nodo 1.</li>
+									<dl>
+										<dt>Paso inicial</dt>
+										<dd>Igualar ∆n = □n para indicar que las ocurrencias más temprano y más tardío del ultimo nodo en el proyecto son iguales.										</dd>
+										<dt>Paso general j</dt>
+										<dd>Dado que los nodos p,q, …y v están enlazados directamente con el nodo j por las actividades de salida (j,p),(j,q),… y (j,v) y que los tiempos más tardíos de ocurrencia de los eventos (nodos) p,q,…y v ya se han calculado, entonces se calcula el tiempo tardío de ocurrencia del evento j como sigue:</dd>
+										<p>∆j = min{∆p – Djp, ∆q - Djq,…, ∆v  - Djv }</p>
+										<p>El paso hacia atrás se termina cuando se calcula ∆1  en el nodo 1.</p>
+										<p>Con base en los cálculos anteriores, una actividad (i, j) será crítica si satisface 3 condiciones:</p>
+										<ul>
+											<li type="none">∆i  = □j</li>
+											<li type="none">∆j  = □j</li>
+											<li type="none">∆j - ∆i = □j - □i  =Dij</li>
+										</ul>
+									</dl>
+									<p>Las 3 condiciones indican que los tiempos más tempranos y más tardíos de ocurrencia de los nodos i y j  son iguales y que la duración Dij  se ajusta exactamente al intervalo especificado de tiempo. Una actividad que no satisface las 3 condiciones es no crítica.</p>
+									<p>Las actividades criticas de una red deben formar una trayectoria no interrumpida que abarque todo la red, desde el inicio hasta el final.</p>
+								</ol>
+								<p>Se reconoce que □j representa el tiempo mas temprano de iniciación de una actividad ( i, j) y que ∆j representa el tiempo mas tardío de terminación. Esto quiere decir que (∆i ,□j ) limita el intervalo máximo de tiempo durante el cual se puede programar la actividad (i, j).</p>
+								<h3>Determinación de las holguras</h3>
+								<p>son las holguras de tiempo disponibles dentro del intervalo asignado para la actividad no critica. Las dos mas comunes son:</p>
+								<dl>
+									<dt>Holgura total</dt>
+									<dd>Es el exceso del intervalo de tiempo definido por el tiempo mas temprano de ocurrencia del evento i hasta el tiempo más tardío de ocurrencia del evento j en la duración de (i,j); esto es, TF ij = ∆i - □j - Dij</dd>
+									<dt>Holgura libre</dt>
+									<dd>Es el exceso del intervalo de tiempo definido por el tiempo mas temprano de ocurrencia del evento i hasta el tiempo más temprano de ocurrencia del elemento j durante la duración de (i,j); esto es, FF ij = es el exceso del intervalo de tiempo definido por el tiempo mas temprano de ocurrencia del evento i hasta el tiempo más tardío de ocurrencia del evento j en la duración de (i,j); esto es, FF ij = □j - □j – Dij</dd>
+									<dd>Por definición, FFij ≤ TFij</dd>
+								</dl>
+								<h3 class="align-center">Calculo de las holguras totales y libres</h3>
+								<img class="image fit" src="images/Holguras.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<h3 class="align-center">Regla de la bandera roja. Para una actividad (i,j) no critica</h3>
+								<ol>
+									<li type="a">Si FFij = TFij  entonces se puede programar la actividad en cualquier en cualquier lugar dentro de su intervalo (∆i - □j ) sin causar conflicto con el programa.</li>
+									<li type="a">Si Ffij < TFij entonces el inicio de la actividad (i,j) se puede demorar cuando mucho hasta  FFij apartir de su tiempo mas temprano de inicio (□j) sin causar conflicto con el programa. Toda demora mayor que FFij (pero no mayor que TFij)se debe acompañar por una demora igual apartir de □j   en el tiempo de iniciacion de todas las actividades que salen del nodo j.</li>
+								</ol>
+								<h3 class="align-center">Formulación del método de la ruta critica con programación lineal</h3>
+								<ul>
+									<li>Se puede aplicar la formulación como programa lineal de ruta más corta a la ruta critica, como sigue. Supondremos que un flujo unitario entra a la red en el nodo de inicio y sale en el nodo final.</li>
+									<li>Xij = Cantidad de flujo en la actividad (i,j) para toda i y j definida.</li>
+									<li>Dij = Duración de la actividad (i,j) para toda i y j definida.</li>
+								</ul>
+								<p>Así, la función objetivo del programa lineal se transforma en:</p>
+								<img class="image fit" src="images/Formula4.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<blockquote>
+									<p>Hay una restricción que representa la conservación del flujo en cada nodo; esto es, para todo nodo j.</p>
+									<p>Flujo total que entra = Flujo total que sale</p>
+								</blockquote>
+								<p>Naturalmente, todas las variables Xij son no negativas.</p>
+								<p>En el problema de la ruta mas corta, se puede usar el dual del programa lineal para resolver el problema CPM (de ruta critica).</p>
+								
+								<h3 class="major align-center">Redes de PERT</h3>
+								<p>El PERT difiere del CPM en que basa la duración de una actividad en 3 estimaciones:</p>
+								<ol>
+									<li>Tiempo optimista a, donde se supone que la ejecución va extremadamente bien.</li>
+									<li>Tiempo más probable m, donde se supone que la ejecución se hace bajo condiciones normales.</li>
+									<li>Tiempo pesimista b, donde se supone que la ejecución va extremadamente mal.</li>									
+								</ol>
+								<p>Se supone que el intervalo (a, b) abarca todas las estimaciones posibles de la duración de una actividad, por consiguiente, el estimado m debe estar en algún lugar dentro del intervalo (a, b). Con base en los estimados el tiempo promedio de duración D, y la varianza v, se calculan como sigue:</p>
+								<img class="image fit" src="images/Formula5.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<ul>
+									<li>Los cálculos de ruta critica (CPM) que se explicaron anteriormente se pueden aplicar en forma directa, sustituyendo la estimación única D por D.</li>
+									<li>Ahora es posible estimar la probabilidad de que un nodo j en la red suceda en un tiempo programado especificado con anterioridad, Sj.</li>
+									<li>Sea ej el tiempo más temprano de ocurrencia del nodo j. como las duraciones de las actividades que van del nodo de inicio al nodo j son variables aleatorias, ej también debe ser una variable aleatoria. Suponiendo que todas la actividades en la red sean estadísticamente independientes, se puede determinar la media, E{ej} y la varianza, var{ej} como sigue. Si sólo hay una ruta desde el nodo de inicio hasta el nodo j, la media es la suma de la duración esperada D, para todas las actividades a lo largo de esa ruta, y la varianza es la suma de las varianzas y de las mismas actividades.</li>
+									<li>Por otra parte, si hay mas de una ruta que llegue al nodo j, será necesario calcular primero la distribución estadística de la duración de la ruta más larga, antes de calcular la media y la varianza correctas. Este problema es bastante difícil, porque equivale a determinar la distribución del máximo de varias variables aleatorias. Por consiguiente, una hipótesis simplificadora es calcular la media y la varianza. E{ej} y var {ej}, como el de la ruta al nodo j que tenga la suma mayor de duraciones esperadas de las actividades. Si hay 2 o más rutas que tienen la misma media (o promedio), se selecciona la que tenga la varianza mayor, porque refleja la máxima incertidumbre y en consecuencia conduce a un estimado más conservador de las probabilidades.</li>
+								</ul>
+								<p>Una vez calculado la media y la varianza E{ej} y var {ej} de la ruta al nodo j, la probabilidad que se realice el nodo j en un tiempo Sj preestablecido, se calcula con la siguiente fórmula:</p>
+								<img class="image fit" src="images/Formula6.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<dl>En donde:  </br>
+									z= Variable aleatoria normal estándar
+								</dl>
+								<img width="50%" src="images/Formula7.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
+								<p>La variable aleatoria normal estándar z tiene media 0 y desviación estándar 1. La justificación para usar la distribución normal es que ej es la suma de variables aleatorias independientes. De acuerdo con el teorema del límite central ( o ley de la distribución de los errores), ej está distribuida normalmente, en forma aproximada.</p>
+								<a href="#Subcom3" class="button primary left">Regresar</a>
+							</article>		
 					</div>
 
 				<!-- Footer -->
