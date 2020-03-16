@@ -18,12 +18,12 @@
 						   </div>
 						<div class="content">
 							<div class="inner">
-								<h1 class="auto">Metodos Simplex</h1>
+								<h1 class="auto">Metodos Símplex</h1>
 							</div>
 						</div>
 						<nav >
 							<ul>
-								<li><a href="#TEMA1">Método Simplex</a></li>
+								<li><a href="#TEMA1">Método Símplex</a></li>
 								<li><a href="#TEMA2">Método de la M</a></li>
 								<li><a href="#TEMA3">Método de dos fases</a></li>
 								<li><a href="#TEMA4">Método Símplex Revisado</a></li>
@@ -35,15 +35,15 @@
 
 				<!-- Main -->
 					<div id="main">
-						<!-- Temas de Metodos Simplex -->
+						<!-- Temas de Metodos Símplex -->
 							<article id="TEMA1">
-								<h2 class="major">Metodo Simplex</h2>
-								<h3 class="major align-center">Método Simplex Tabular</h3>
+								<h2 class="major">Metodo Símplex</h2>
+								<h3 class="major align-center">Método Símplex Tabular</h3>
 
-								<p>El método Simplex es un procedimiento general para encontrar la solución óptima a problemas de Programación Lineal.
+								<p>El método Símplex es un procedimiento general para encontrar la solución óptima a problemas de Programación Lineal.
 									Este método logra la solución óptima en un número finito de pasos, la demostración de esto es lo que se pretende realizar.</p>
 								<br>
-								<p>El Método Simplex, esta diseñado para ser aplicado únicamente hasta que el problema se encuentre en la forma Estándar.</p>
+								<p>El Método Símplex, esta diseñado para ser aplicado únicamente hasta que el problema se encuentre en la forma Estándar.</p>
 								<p>Un problema lineal se dice que esta en la forma estándar si: </p>
 									<ol>
 										<li>Todas las restricciones son igualdades </li>
@@ -61,10 +61,10 @@
 									<br>
 									<img class="image fit" src="images/metodo_simplex_ejemplo1.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
 									<br>
-									<h3 class="major align-center">Procedimiento del Método Simplex </h3>
-									<h3 class="align-center">Paso 1: Escribir la tabla inicial simplex </h3>
+									<h3 class="major align-center">Procedimiento del Método Símplex </h3>
+									<h3 class="align-center">Paso 1: Escribir la tabla inicial símplex </h3>
 
-									<p>La forma tabular del método simplex registra la información esencial en la llamada Tabla Símplex, a saber:</p>
+									<p>La forma tabular del método símplex registra la información esencial en la llamada Tabla Símplex, a saber:</p>
 
 									<ol>
 										<li>Los coeficientes de las variables </li>
@@ -117,8 +117,13 @@
 									<p>No siempre es fácil obtener una solución básica factible inicial, en las variables originales del modelo. Para conseguir esto existen varios procedimientos como son:</p>
 									<ol>
 										<li>Método de la M.</li>
-										<li>Método Simplex de dos fases.</li>
+										<li>Método Símplex de dos fases.</li>
 									</ol>
+									<div witdh="auto" class="align-right">
+										<p><i>Material Audiovisual</i></p>
+										<a href="https://podcasts.apple.com/mx/podcast/metodo-simplex/id882794482?i=1000330495052" class="button primary icon solid fa-play left">Símplex</a>
+										<a href="https://podcasts.apple.com/mx/podcast/simplex-tabular/id882794482?i=1000352430644" class="button primary icon solid fa-play left">Símplex Tabular</a>
+									</div>
 							</article>
 							<article id="TEMA2">
 								<h2 class="major">Método de la M</h2>
@@ -149,9 +154,9 @@
 								<img class="image fit" src="images/metodo_M_ejemplo4.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
 								<br>
 								<p>La restricción es del tipo >=, por lo que para cambiarla a su forma de igualdad tendríamos que restar una variable de superávit (o de excedente). No obstante en este caso debe agregarse otra variable. Esta variable extra, llamada variable artificial se aumenta como sigue:</p>
-								<p align="center">0.6x1 + 0.4x2 - x5 + x6 = 6 </p>
+								<p class="align center">0.6x1 + 0.4x2 - x5 + x6 = 6 </p>
 								<p>La función objetivo queda de la siguiente manera:</p>
-								<p align="center">Z=0.4x1+0.5x2+Mx4+Mx6</p>
+								<p class="align center">Z=0.4x1+0.5x2+Mx4+Mx6</p>
 								<br>
 								<h3	class="align-center">Problema Artificial</h3>
 								<br>
@@ -175,18 +180,18 @@
 								<p>Se busca la solución Básica Factible para usarla como solución Básica Factible inicial del método símplex de la Fase 2 al problema real (con su función objetivo) </p>
 								<h3	class="major align-center">Fase 2: </h3>
 								<p>Función objetivo: Z=0.4x1+0.5x2 (con x4=0, x6=0) </p>
-								<p>El objetivo de esta fase es encontrar una solución óptima para el problema real con el método simplex.</p>
+								<p>El objetivo de esta fase es encontrar una solución óptima para el problema real con el método símplex.</p>
 								<p> Como las variables artificiales no son parte del problema real, se pueden eliminar y comenzando con la solución Básica Factible de la Fase 1 </p>
 								<br>
-								<h3	class="major align-center">Tabla simplex de la Fase I</h3>
+								<h3	class="major align-center">Tabla símplex de la Fase I</h3>
 								<br>
 								<img class="image fit" src="images/metodo_2fases_ejemplo2.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
 								<br>
-								<h3	class="major align-center">Tabla simplex final de la Fase I</h3>
+								<h3	class="major align-center">Tabla símplex final de la Fase I</h3>
 								<br>
 								<img class="image fit" src="images/metodo_2fases_ejemplo3.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
 								<br>
-								<h3 class="major align-center">Tabla simplex de la Fase 2, después de las operaciones algebraicas pertinentes y eliminación de variables</h3>
+								<h3 class="major align-center">Tabla símplex de la Fase 2, después de las operaciones algebraicas pertinentes y eliminación de variables</h3>
 								<br>
 								<img class="image fit" src="images/metodo_2fases_ejemplo4.png" alt="SI ESTAS VIENDO ESTO TENEMOS PROBLEMAS, FAVOR DE REPORTAR" />
 								<br>
@@ -214,7 +219,7 @@
 								<br>
 								<p>El Método Símplex Revisado, consiste básicamente en los mismos básicos que el Método Simple, por lo tanto, se trata de una versión simplificada del procedimiento original : </p>
 								<ol>
-									<li>El mismo que en el método simplex original.</li>
+									<li>El mismo que en el método símplex original.</li>
 									<li>Se determina la variable básica que entrante: igual que el método símplex original. </li>
 									<li>Se determina la variable básica que sale: igual que el método símplex original, pero se calculan solo los números que se necesitan. </li>
 									<li>Se determina una nueva solución básica factible. </li>
